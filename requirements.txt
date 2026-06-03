@@ -1,0 +1,17 @@
+# --- core ---
+duckdb>=1.0
+pandas>=2.0
+python-dotenv>=1.0
+
+# --- spreadsheet generation (seed data) ---
+openpyxl>=3.1
+
+# --- LLM providers (pick one via .env; both installed so the switch just works) ---
+anthropic>=0.40        # Anthropic API path
+boto3>=1.34            # AWS Bedrock path
+
+# --- UI ---
+streamlit>=1.36
+
+# --- RAG step (added later; heavy, installs torch) ---
+# sentence-transformers>=3.0

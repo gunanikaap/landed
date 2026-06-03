@@ -1,0 +1,17 @@
+# secrets
+.env
+
+# real data — NEVER commit; only the synthetic sample_data/ is public
+real_data/
+
+# databases / build artifacts
+*.duckdb
+*.db
+job_applications_sample.xlsx
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/

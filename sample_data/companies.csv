@@ -1,0 +1,29 @@
+company_id,company_name,industry,size_band,hq_location,has_irish_office
+1,Apple,Technology,Enterprise,Cork,Y
+2,Google,Technology,Enterprise,Dublin,Y
+3,Mastercard,FinTech,Enterprise,Dublin,Y
+4,Stripe,FinTech,Large,Dublin,Y
+5,Intercom,Technology,Mid,Dublin,Y
+6,Workday,Technology,Large,Dublin,Y
+7,HubSpot,Technology,Large,Dublin,Y
+8,Fidelity Investments,Financial Services,Enterprise,Dublin,Y
+9,BNY,Financial Services,Enterprise,Cork,Y
+10,Optum,Healthcare,Enterprise,Dublin,Y
+11,Deloitte,Consulting,Enterprise,Dublin,Y
+12,Accenture,Consulting,Enterprise,Dublin,Y
+13,Version 1,Consulting,Large,Dublin,Y
+14,Red Hat,Technology,Large,Waterford,Y
+15,Microsoft,Technology,Enterprise,Dublin,Y
+16,Amazon (AWS),Technology,Enterprise,Dublin,Y
+17,Salesforce,Technology,Enterprise,Dublin,Y
+18,LinkedIn,Technology,Large,Dublin,Y
+19,Datadog,Technology,Large,Dublin,Y
+20,Liberty IT,Insurance,Mid,Dublin,Y
+21,Aon,Insurance,Enterprise,Dublin,Y
+22,Guidewire,InsurTech,Mid,Dublin,Y
+23,Fenergo,FinTech,Mid,Dublin,Y
+24,Phorest,Technology,SME,Dublin,Y
+25,Squarespace,Technology,Large,Dublin,Y
+26,SAP,Technology,Enterprise,Dublin,Y
+27,Indeed,Technology,Large,Dublin,Y
+28,Zalando,Technology,Large,Dublin,Y

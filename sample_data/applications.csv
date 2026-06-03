@@ -1,0 +1,57 @@
+application_id,company_id,role_title,track,seniority,channel,source,work_mode,location,date_applied,status,current_stage,salary_min,salary_max,salary_target,last_activity_date
+1,21,Senior Data Engineer,Data Engineer,Associate,Referral,LinkedIn,Remote,Remote (Ireland),2026-04-08,Ghosted,No Response,62000,70000,69000,2026-04-11
+2,7,AI / Data Engineer,Data Engineer,Associate,Referral,Internal Referral,Hybrid,Dublin,2026-02-24,Rejected,Technical Interview,62000,74000,65000,2026-03-26
+3,25,Data Engineer,Data Engineer,Mid,Cold Apply,Indeed,Remote,Remote (Ireland),2026-04-04,Screening,Recruiter Screen,70000,78000,77000,2026-04-15
+4,18,AI / Data Engineer,Data Engineer,Senior,Cold Apply,Company Site,Remote,Remote (Ireland),2026-05-03,Interview,Technical Interview,84000,92000,91000,2026-05-22
+5,9,Product Owner (Insurance),Product Owner,Associate,Cold Apply,LinkedIn,Hybrid,Cork,2026-03-12,Ghosted,No Response,60000,68000,67000,2026-03-17
+6,6,Product Owner (Insurance),Product Owner,Senior,Cold Apply,LinkedIn,Hybrid,Dublin,2026-05-03,Rejected,Technical Interview,82000,94000,85000,2026-06-01
+7,19,Analytics Engineer,Data Analyst,Associate,Cold Apply,LinkedIn,Hybrid,Dublin,2026-05-01,Interview,Technical Interview,47000,59000,50000,2026-05-30
+8,8,Business Analyst,Business Analyst,Mid,Referral,LinkedIn,Onsite,Dublin,2026-05-12,Rejected,Technical Interview,58000,68000,65000,2026-06-03
+9,15,Product Owner,Product Owner,Mid,Referral,Internal Referral,Remote,Remote (Ireland),2026-04-25,Rejected,Application Review,68000,80000,71000,2026-05-06
+10,24,Analytics Engineer,Data Analyst,Senior,Recruiter,Recruiter Agency,Onsite,Dublin,2026-03-29,Rejected,Recruiter Screen,69000,81000,76000,2026-04-13
+11,18,Business Analyst,Business Analyst,Mid,Cold Apply,Company Site,Onsite,Dublin,2026-05-25,Ghosted,No Response,58000,70000,61000,2026-05-28
+12,3,Scrum Master,Scrum Master,Senior,Cold Apply,Company Site,Hybrid,Dublin,2026-05-11,Rejected,Application Review,79000,94000,86000,2026-05-24
+13,18,Senior Scrum Master,Scrum Master,Associate,Cold Apply,LinkedIn,Remote,Remote (Ireland),2026-04-05,Ghosted,No Response,57000,72000,64000,2026-04-10
+14,3,AI / Data Engineer,Data Engineer,Mid,Cold Apply,Company Site,Hybrid,Dublin,2026-05-24,Interview,Final / Onsite,70000,78000,73000,2026-06-03
+15,18,AI / Data Engineer,Data Engineer,Mid,Referral,Internal Referral,Remote,Remote (Ireland),2026-05-20,Interview,Hiring Manager Call,70000,80000,73000,2026-06-03
+16,15,Data Analyst,Data Analyst,Mid,Inbound,LinkedIn,Hybrid,Dublin,2026-05-01,Ghosted,No Response,55000,67000,58000,2026-05-10
+17,5,Product Owner (Insurance),Product Owner,Mid,Recruiter,Recruiter Agency,Hybrid,Dublin,2026-03-10,Withdrawn,Withdrawn,68000,76000,71000,2026-03-15
+18,25,Data Analyst,Data Analyst,Mid,Cold Apply,Indeed,Onsite,Dublin,2026-06-01,Withdrawn,Withdrawn,55000,65000,60000,2026-06-03
+19,10,Associate Product Owner,Product Owner,Associate,Referral,LinkedIn,Remote,Remote (Ireland),2026-04-22,Ghosted,No Response,60000,68000,67000,2026-05-01
+20,17,BI Analyst,Data Analyst,Associate,Inbound,LinkedIn,Onsite,Dublin,2026-05-24,Interview,Hiring Manager Call,47000,55000,54000,2026-06-03
+21,19,AI / Data Engineer,Data Engineer,Associate,Referral,Internal Referral,Onsite,Dublin,2026-03-02,Rejected,Application Review,62000,72000,69000,2026-03-16
+22,5,Agile Delivery Lead,Scrum Master,Mid,Recruiter,Recruiter Agency,Hybrid,Dublin,2026-03-25,Ghosted,No Response,65000,73000,68000,2026-03-31
+23,5,Business Analyst,Business Analyst,Senior,Cold Apply,Company Site,Hybrid,Dublin,2026-02-18,Interview,Hiring Manager Call,72000,84000,79000,2026-03-01
+24,5,Data Engineer,Data Engineer,Mid,Referral,Internal Referral,Remote,Remote (Ireland),2026-03-06,Rejected,Recruiter Screen,70000,82000,73000,2026-03-27
+25,28,Data Engineer (Analytics),Data Engineer,Senior,Referral,Internal Referral,Remote,Remote (Ireland),2026-02-27,Rejected,Application Review,84000,96000,87000,2026-03-17
+26,1,AWS Data Engineer,Data Engineer,Mid,Recruiter,Recruiter Agency,Hybrid,Cork,2026-04-16,Interview,Final / Onsite,70000,78000,75000,2026-05-15
+27,25,Associate Product Owner,Product Owner,Senior,Cold Apply,Company Site,Onsite,Dublin,2026-05-29,Ghosted,No Response,82000,92000,87000,2026-06-03
+28,26,Business Analyst,Business Analyst,Associate,Recruiter,Recruiter Agency,Hybrid,Dublin,2026-05-04,Ghosted,No Response,50000,58000,55000,2026-05-13
+29,12,AWS Data Engineer,Data Engineer,Associate,Cold Apply,Indeed,Hybrid,Dublin,2026-04-18,Interview,Hiring Manager Call,62000,70000,67000,2026-05-05
+30,4,Analytics Engineer,Data Analyst,Associate,Inbound,Recruiter Agency,Hybrid,Dublin,2026-02-28,Rejected,Technical Interview,47000,62000,52000,2026-03-30
+31,2,Scrum Master,Scrum Master,Mid,Recruiter,Recruiter Agency,Hybrid,Dublin,2026-04-20,Rejected,Recruiter Screen,65000,73000,72000,2026-05-09
+32,10,Agile Delivery Lead,Scrum Master,Mid,Referral,LinkedIn,Hybrid,Dublin,2026-02-26,Interview,Final / Onsite,65000,80000,72000,2026-03-31
+33,14,BI Analyst,Data Analyst,Mid,Cold Apply,Indeed,Remote,Remote (Ireland),2026-05-11,Interview,Hiring Manager Call,55000,70000,62000,2026-05-27
+34,27,Business Analyst,Business Analyst,Mid,Referral,LinkedIn,Hybrid,Dublin,2026-04-02,Rejected,Recruiter Screen,58000,66000,61000,2026-04-22
+35,21,Associate Product Owner,Product Owner,Mid,Referral,LinkedIn,Onsite,Dublin,2026-05-04,Ghosted,No Response,68000,76000,73000,2026-05-13
+36,2,Product Owner,Product Owner,Mid,Recruiter,LinkedIn,Onsite,Dublin,2026-02-17,Interview,Technical Interview,68000,83000,75000,2026-03-19
+37,15,AWS Data Engineer,Data Engineer,Senior,Referral,Internal Referral,Remote,Remote (Ireland),2026-05-23,Interview,Technical Interview,84000,96000,89000,2026-06-03
+38,18,AWS Data Engineer,Data Engineer,Associate,Cold Apply,LinkedIn,Hybrid,Dublin,2026-04-20,Screening,Recruiter Screen,62000,77000,67000,2026-04-30
+39,7,Analytics Engineer,Data Analyst,Senior,Cold Apply,LinkedIn,Hybrid,Dublin,2026-06-01,Offer,Offer,69000,84000,74000,2026-06-03
+40,16,Senior Data Engineer,Data Engineer,Mid,Recruiter,Recruiter Agency,Remote,Remote (Ireland),2026-03-25,Ghosted,No Response,70000,80000,77000,2026-04-02
+41,19,Product Owner,Product Owner,Associate,Cold Apply,Indeed,Hybrid,Dublin,2026-04-21,Ghosted,No Response,60000,72000,65000,2026-04-28
+42,11,Agile Delivery Lead,Scrum Master,Associate,Inbound,Recruiter Agency,Hybrid,Dublin,2026-05-30,Interview,Technical Interview,57000,65000,62000,2026-06-03
+43,25,Business Analyst,Business Analyst,Mid,Inbound,LinkedIn,Remote,Remote (Ireland),2026-05-16,Screening,Recruiter Screen,58000,68000,61000,2026-05-24
+44,15,Agile Delivery Lead,Scrum Master,Associate,Cold Apply,LinkedIn,Remote,Remote (Ireland),2026-05-19,Rejected,Recruiter Screen,57000,67000,62000,2026-06-03
+45,23,AI / Data Engineer,Data Engineer,Mid,Cold Apply,Company Site,Remote,Remote (Ireland),2026-03-17,Rejected,Technical Interview,70000,82000,77000,2026-04-13
+46,17,Product Owner,Product Owner,Senior,Recruiter,Recruiter Agency,Hybrid,Dublin,2026-02-15,Screening,Recruiter Screen,82000,94000,89000,2026-02-27
+47,6,Senior Scrum Master,Scrum Master,Associate,Recruiter,LinkedIn,Hybrid,Dublin,2026-05-01,Rejected,Technical Interview,57000,69000,62000,2026-06-02
+48,19,Associate Product Owner,Product Owner,Mid,Cold Apply,Indeed,Hybrid,Dublin,2026-02-19,Rejected,Application Review,68000,78000,73000,2026-03-08
+49,23,BI Analyst,Data Analyst,Associate,Inbound,LinkedIn,Hybrid,Dublin,2026-03-22,Interview,Technical Interview,47000,62000,52000,2026-04-20
+50,3,Data Engineer (Analytics),Data Engineer,Mid,Cold Apply,LinkedIn,Hybrid,Dublin,2026-02-26,Screening,Recruiter Screen,70000,82000,75000,2026-03-14
+51,9,AWS Data Engineer,Data Engineer,Associate,Referral,LinkedIn,Remote,Remote (Ireland),2026-05-05,Interview,Technical Interview,62000,72000,65000,2026-05-25
+52,10,AWS Data Engineer,Data Engineer,Mid,Cold Apply,Company Site,Hybrid,Dublin,2026-04-25,Interview,Hiring Manager Call,70000,78000,77000,2026-05-11
+53,28,Senior Data Engineer,Data Engineer,Mid,Cold Apply,Company Site,Onsite,Dublin,2026-05-18,Rejected,Technical Interview,70000,82000,75000,2026-06-03
+54,5,Analytics Engineer,Data Analyst,Associate,Referral,Internal Referral,Remote,Remote (Ireland),2026-04-14,Screening,Recruiter Screen,47000,57000,54000,2026-04-29
+55,28,Associate Product Owner,Product Owner,Mid,Cold Apply,LinkedIn,Onsite,Dublin,2026-03-13,Ghosted,No Response,68000,76000,71000,2026-03-16
+56,6,AI / Data Engineer,Data Engineer,Associate,Referral,Internal Referral,Remote,Remote (Ireland),2026-05-28,Ghosted,No Response,62000,77000,67000,2026-06-03

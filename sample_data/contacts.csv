@@ -1,0 +1,23 @@
+contact_id,company_id,full_name,title,relationship,connected_on,responded
+1,15,Cormac Brennan,Technical Recruiter,Recruiter,2026-04-25,Y
+2,15,Padraig Murphy,Engineering Manager,Referral,2026-02-05,Y
+3,20,Cian Kelly,Senior Data Engineer,Referral,2026-04-30,N
+4,25,Maeve McCarthy,Talent Acquisition Partner,Recruiter,2026-03-17,Y
+5,16,Oisin Nolan,Sourcing Specialist,Recruiter,2026-04-24,Y
+6,14,Tadhg Quinn,Technical Recruiter,Recruiter,2026-05-18,Y
+7,11,Aoife O'Brien,Scrum Master,Referral,2026-02-09,Y
+8,23,Liam Hayes,Sourcing Specialist,Recruiter,2026-04-08,N
+9,2,Eoin Healy,Technical Recruiter,Recruiter,2026-04-27,Y
+10,28,Saoirse Byrne,Technical Recruiter,Recruiter,2026-03-06,N
+11,14,Grainne Daly,Scrum Master,Referral,2026-04-13,Y
+12,21,Roisin Murphy,Talent Acquisition Partner,Recruiter,2026-05-03,Y
+13,10,Fionn Quinn,Sourcing Specialist,Recruiter,2026-05-14,Y
+14,20,Aisling Ryan,Delivery Lead,Hiring Manager,2026-04-20,Y
+15,14,Sean O'Brien,Product Owner,Referral,2026-03-31,N
+16,16,Conor Gallagher,Software Engineer,Network,2026-03-25,N
+17,27,Emer Quinn,Talent Acquisition Partner,Recruiter,2026-04-28,Y
+18,13,Ciara Dunne,Product Owner,Referral,2026-03-25,N
+19,28,Darragh Fitzgerald,Engineering Manager,Referral,2026-04-16,N
+20,27,Niamh Gallagher,Scrum Master,Referral,2026-02-11,Y
+21,28,Sinead Moran,Scrum Master,Referral,2026-03-29,Y
+22,15,Orla O'Connor,Software Engineer,Network,2026-03-01,Y
