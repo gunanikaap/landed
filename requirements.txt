@@ -6,9 +6,10 @@ python-dotenv>=1.0
 # --- spreadsheet generation (seed data) ---
 openpyxl>=3.1
 
-# --- LLM providers (pick one via .env; both installed so the switch just works) ---
+# --- LLM providers (pick one via .env; all installed so the switch just works) ---
 anthropic>=0.40        # Anthropic API path
 boto3>=1.34            # AWS Bedrock path
+openai>=1.40           # OpenAI-compatible path: FREE tiers (Gemini, Groq)
 
 # --- UI ---
 streamlit>=1.36
