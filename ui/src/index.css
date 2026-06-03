@@ -1,0 +1,396 @@
+/* Landed — night-runway flight deck.
+   Deep navy field, amber approach lights, warm paper ink.
+   Fraunces speaks, IBM Plex Mono computes. */
+
+:root {
+  --night: #0f1822;
+  --night-2: #15212e;
+  --panel: rgba(255, 255, 255, 0.035);
+  --line: rgba(242, 233, 215, 0.14);
+  --ink: #f2e9d7;
+  --ink-dim: #b9af9c;
+  --amber: #f2a93b;
+  --amber-soft: rgba(242, 169, 59, 0.16);
+  --green: #84d6ab;
+  --red: #ff8273;
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --sans: 'IBM Plex Sans', system-ui, sans-serif;
+  --display: 'Fraunces', Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--sans);
+  background:
+    radial-gradient(60rem 28rem at 50% 118%, rgba(242, 169, 59, 0.13), transparent 60%),
+    radial-gradient(46rem 22rem at 85% -10%, rgba(110, 160, 220, 0.08), transparent 60%),
+    linear-gradient(var(--night), var(--night-2));
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* faint starfield grain */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 26px 26px;
+  opacity: 0.35;
+}
+
+.page {
+  position: relative;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 3.2rem 1.4rem 2rem;
+}
+
+/* ---------- header ---------- */
+header { animation: settle 0.7s ease both; }
+
+.brandRow {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(3rem, 8vw, 4.6rem);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.plane {
+  font-size: 0.5em;
+  margin-left: 0.25em;
+  display: inline-block;
+  transform: translateY(-0.2em);
+}
+
+.dataBadge {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border: 1px solid var(--amber);
+  border-radius: 999px;
+  padding: 0.28rem 0.7rem;
+  background: var(--amber-soft);
+}
+
+.tagline {
+  margin: 0.4rem 0 1.4rem;
+  color: var(--ink-dim);
+  font-size: 1.05rem;
+}
+
+/* runway centerline */
+.runway {
+  height: 0;
+  border-top: 3px dashed rgba(242, 169, 59, 0.45);
+  margin-bottom: 2.2rem;
+}
+
+/* ---------- ask ---------- */
+.askRow {
+  display: flex;
+  gap: 0.6rem;
+  animation: settle 0.7s 0.08s ease both;
+}
+
+.askRow input {
+  flex: 1;
+  font: 500 1.02rem var(--sans);
+  color: var(--ink);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.95rem 1.1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.askRow input::placeholder { color: rgba(185, 175, 156, 0.55); }
+
+.askRow input:focus {
+  border-color: var(--amber);
+  box-shadow: 0 0 0 3px var(--amber-soft);
+}
+
+.askRow button {
+  font: 600 0.95rem var(--sans);
+  letter-spacing: 0.04em;
+  color: #1d1405;
+  background: var(--amber);
+  border: none;
+  border-radius: 12px;
+  padding: 0 1.6rem;
+  cursor: pointer;
+  transition: transform 0.15s, filter 0.15s;
+}
+
+.askRow button:hover:not(:disabled) { transform: translateY(-1px); filter: brightness(1.07); }
+.askRow button:disabled { opacity: 0.45; cursor: default; }
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+  animation: settle 0.7s 0.16s ease both;
+}
+
+.chip {
+  font: 400 0.78rem var(--mono);
+  color: var(--ink-dim);
+  background: transparent;
+  border: 1px dashed var(--line);
+  border-radius: 999px;
+  padding: 0.42rem 0.85rem;
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+.chip:hover:not(:disabled) {
+  color: var(--amber);
+  border-color: var(--amber);
+  background: var(--amber-soft);
+  transform: translateY(-1px);
+}
+
+/* ---------- loader ---------- */
+.loader { margin-top: 2.4rem; }
+
+.strip {
+  position: relative;
+  height: 2.2rem;
+  border-bottom: 2px dashed rgba(242, 169, 59, 0.35);
+  overflow: hidden;
+}
+
+.taxi {
+  position: absolute;
+  bottom: 0.15rem;
+  font-size: 1.25rem;
+  animation: taxi 2.6s linear infinite;
+}
+
+@keyframes taxi {
+  from { left: -8%; }
+  to { left: 104%; }
+}
+
+.loaderText {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--ink-dim);
+  margin-top: 0.7rem;
+  letter-spacing: 0.06em;
+}
+
+/* ---------- result ---------- */
+.result { margin-top: 2.2rem; }
+
+.answerCard {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--amber);
+  border-radius: 14px;
+  padding: 1.4rem 1.6rem;
+  animation: touchdown 0.55s cubic-bezier(0.22, 0.9, 0.36, 1) both;
+}
+
+.status {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.7rem;
+}
+
+.dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green);
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+.answer {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 1.35rem;
+  line-height: 1.55;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* ---------- flight path / SQL ---------- */
+.flightPath {
+  margin-top: 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.flightPath summary {
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  padding: 0.85rem 1.2rem;
+  user-select: none;
+}
+
+.flightPath summary:hover { color: var(--amber); }
+
+.attempt { padding: 0.4rem 1.2rem 1.1rem; }
+.attempt + .attempt { border-top: 1px dashed var(--line); padding-top: 1rem; }
+
+.attemptHead {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.55rem;
+}
+
+.attemptTag {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.tag {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  border-radius: 999px;
+  padding: 0.18rem 0.6rem;
+}
+
+.tagOk { color: var(--green); border: 1px solid rgba(132, 214, 171, 0.4); }
+.tagError { color: var(--red); border: 1px solid rgba(255, 130, 115, 0.4); }
+
+.sql {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: #cfe3d8;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  overflow-x: auto;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.sqlError {
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  color: var(--red);
+  margin-top: 0.5rem;
+}
+
+/* ---------- table ---------- */
+.tableWrap { margin-top: 0.8rem; overflow-x: auto; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+}
+
+th {
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber);
+  border-bottom: 1px solid var(--amber-soft);
+  padding: 0.45rem 0.9rem 0.45rem 0;
+  white-space: nowrap;
+}
+
+td {
+  color: var(--ink);
+  border-bottom: 1px solid rgba(242, 233, 215, 0.07);
+  padding: 0.42rem 0.9rem 0.42rem 0;
+  white-space: nowrap;
+}
+
+tbody tr:hover td { background: rgba(242, 169, 59, 0.05); }
+
+.tableNote {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--ink-dim);
+  margin-top: 0.5rem;
+}
+
+/* ---------- misc ---------- */
+.errorBox {
+  margin-top: 2rem;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--red);
+  border: 1px dashed rgba(255, 130, 115, 0.5);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+}
+
+footer {
+  margin-top: 3.4rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--ink-dim);
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+footer a { color: var(--amber); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+/* ---------- animations ---------- */
+@keyframes settle {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes touchdown {
+  0% { opacity: 0; transform: translateY(-16px); }
+  65% { opacity: 1; transform: translateY(3px); }
+  100% { transform: none; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@media (max-width: 560px) {
+  .askRow { flex-direction: column; }
+  .askRow button { padding: 0.9rem; }
+}

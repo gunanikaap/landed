@@ -15,3 +15,6 @@ __pycache__/
 .venv/
 venv/
 .ipynb_checkpoints/
+
+# node
+node_modules/
