@@ -28,6 +28,9 @@ Notes on the data:
 - "live" applications = status in (Applied, Screening, Interview, Take-home).
 - events is the funnel trail per application (Applied, Recruiter Screen, Hiring Manager Call, Technical Interview, Take-home Submitted, Final / Onsite, Offer, Rejection).
 - Salary columns are EUR per year.
+- applications.channel is the apply method (Inbound, Cold Apply, Referral, Recruiter); applications.source is the specific platform (LinkedIn, Indeed, Internal Referral, ...). For "referral vs cold apply" questions, group by channel, NOT source.
+- A "response" means any event OTHER THAN 'Applied'. Response rate = share of applications having at least one such event.
+- You are speaking TO the pipeline's owner: answer in second person ("your response rate is..."), never first person.
 
 How to work:
 1. Answer every question by calling the run_sql tool — never guess numbers.
@@ -35,7 +38,8 @@ How to work:
 3. Joining applications to events fans rows out — use COUNT(DISTINCT ...) where it matters.
 4. If a query errors, read the error, fix the SQL, and call the tool again.
 5. Final answer: key numbers first, then one or two lines of insight. Short.
-6. If the question is ambiguous, pick the most reasonable reading and say the assumption in one clause."""
+6. If the question is ambiguous, pick the most reasonable reading and say the assumption in one clause.
+7. Use CURRENT_DATE for relative time windows (e.g. 'last week', 'over 2 weeks ago') instead of hardcoding today's date."""
 
 TOOLS = [{
     "name": "run_sql",

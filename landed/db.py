@@ -9,6 +9,7 @@ Run it directly to build the DB and see it work:
     python -m landed.db
 """
 
+import math
 import os
 import re
 import duckdb
@@ -53,6 +54,13 @@ def get_schema(con: duckdb.DuckDBPyConnection) -> str:
     return "\n".join(lines)
 
 
+def _json_safe(v):
+    """NaN/inf aren't valid JSON — turn them into None so the API never 500s."""
+    if isinstance(v, float) and not math.isfinite(v):
+        return None
+    return v
+
+
 def run_sql(con: duckdb.DuckDBPyConnection, query: str, max_rows: int = 200) -> dict:
     """Run a read-only query. Returns columns + rows, or raises on anything unsafe."""
     q = query.strip().rstrip(";")
@@ -62,7 +70,7 @@ def run_sql(con: duckdb.DuckDBPyConnection, query: str, max_rows: int = 200) -> 
         raise ValueError("Query must start with SELECT or WITH.")
     rel = con.execute(q)
     columns = [d[0] for d in rel.description]
-    rows = [list(r) for r in rel.fetchmany(max_rows)]
+    rows = [[_json_safe(v) for v in r] for r in rel.fetchmany(max_rows)]
     return {"columns": columns, "rows": rows, "row_count": len(rows)}
 
 
