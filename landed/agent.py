@@ -55,10 +55,14 @@ TOOLS = [{
 
 
 def ask(question: str, con, llm, max_steps: int = 6) -> dict:
-    """Run the agent loop. Returns {"answer": str, "sql": [queries it ran]}."""
+    """Run the agent loop.
+
+    Returns {"answer": str, "sql": [queries], "results": [per-query result]}
+    where each result is {"columns", "rows", "row_count"} or {"error": "..."}.
+    """
     system = SYSTEM.format(schema=get_schema(con), today=date.today().isoformat())
     messages = [{"role": "user", "content": [{"type": "text", "text": question}]}]
-    sql_log = []
+    sql_log, result_log = [], []
 
     for _ in range(max_steps):
         resp = llm.chat(system=system, messages=messages, tools=TOOLS)
@@ -67,7 +71,8 @@ def ask(question: str, con, llm, max_steps: int = 6) -> dict:
         if resp["stop_reason"] != "tool_use":
             answer = "".join(b["text"] for b in resp["blocks"]
                              if b["type"] == "text").strip()
-            return {"answer": answer or "(no answer)", "sql": sql_log}
+            return {"answer": answer or "(no answer)",
+                    "sql": sql_log, "results": result_log}
 
         # Execute every tool call in this turn; errors go back as results
         results = []
@@ -76,12 +81,16 @@ def ask(question: str, con, llm, max_steps: int = 6) -> dict:
                 query = (b["input"] or {}).get("query", "")
                 sql_log.append(query)
                 try:
-                    payload = format_result(run_sql(con, query), max_show=50)
+                    res = run_sql(con, query)
+                    result_log.append(res)
+                    payload = format_result(res, max_show=50)
                 except Exception as e:
+                    result_log.append({"error": str(e)})
                     payload = f"SQL ERROR: {e}"
                 results.append({"type": "tool_result",
                                 "tool_use_id": b["id"],
                                 "content": payload})
         messages.append({"role": "user", "content": results})
 
-    return {"answer": "(stopped: agent hit the step limit)", "sql": sql_log}
+    return {"answer": "(stopped: agent hit the step limit)",
+            "sql": sql_log, "results": result_log}

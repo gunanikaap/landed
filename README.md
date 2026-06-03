@@ -26,9 +26,9 @@ your question
 ## Stack
 - **Python**
 - **DuckDB** — embedded analytics database
-- **Claude** via Anthropic API *or* AWS Bedrock (switchable in `.env`)
+- **Provider-agnostic LLM** — free tiers **Gemini** and **Groq** via an OpenAI-compatible adapter, or **Claude** through the Anthropic API *or* AWS Bedrock — switchable in `.env`
 - **sentence-transformers** — local embeddings for RAG *(added at the RAG step)*
-- **Streamlit** — the UI
+- **FastAPI** backend + **React** UI
 
 ## Data
 `sample_data/` holds a fully **synthetic** pipeline (no real people or private
@@ -45,15 +45,42 @@ pip install -r requirements.txt
 # build + test the data layer (no API key needed)
 python -m landed.db
 
-# (next) configure your LLM and ask questions
+# configure your LLM provider (see below), then ask questions
 cp .env.example .env   # then add your key
+
+# ask from the terminal
+python ask.py "what's my response rate, referral vs cold apply?"
+
+# or run the API — interactive docs at http://127.0.0.1:8000/docs
+uvicorn api:app --reload --port 8000
 ```
+
+## LLM provider (free options)
+
+Pick one provider in `.env` via `LANDED_LLM_PROVIDER`:
+
+| Provider | `.env` value | Key | Default model |
+|----------|--------------|-----|---------------|
+| **Gemini** *(free, recommended)* | `gemini` | `GEMINI_API_KEY` — free at [aistudio.google.com](https://aistudio.google.com), no card | `gemini-2.5-flash` |
+| **Groq** *(free backup)* | `groq` | `GROQ_API_KEY` — free at [console.groq.com](https://console.groq.com) | `llama-3.3-70b-versatile` |
+| **Anthropic** | `anthropic` | `ANTHROPIC_API_KEY` | `claude-sonnet-4-6` |
+| **Bedrock** | `bedrock` | AWS credentials | set `LANDED_LLM_MODEL` to a Claude id you can access |
+
+Both free tiers talk to one **OpenAI-compatible adapter** in `landed/llm.py`,
+so changing provider is a one-line edit in `.env`.
+
+> **Gotcha:** `LANDED_LLM_MODEL` is shared across providers. When you switch
+> providers, don't leave it pinned to another provider's model (e.g. a Claude
+> model id while `LANDED_LLM_PROVIDER=gemini`) — it gets sent to the new
+> endpoint and rejected. Leave it unset/commented to use each provider's
+> default.
 
 ## Status
 - [x] Synthetic dataset + generator
 - [x] DuckDB data layer (read-only `run_sql`, schema introspection)
-- [ ] Provider-agnostic LLM client
-- [ ] Agent loop (NL → SQL → run → answer)
+- [x] Provider-agnostic LLM client (Gemini / Groq / Anthropic / Bedrock)
+- [x] Agent loop (NL → SQL → run → answer)
+- [x] FastAPI API (`/api/ask`, `/api/health`)
 - [ ] RAG grounding over a data dictionary
-- [ ] Streamlit UI
+- [ ] React UI
 - [ ] Eval harness (execution accuracy + groundedness)
